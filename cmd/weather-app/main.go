@@ -14,8 +14,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	client := api.NewWeatherClient(cfg.APIKey)
-	temp, err := client.GetWeather("Moscow")
+	temp, err := api.NewWeatherClient(cfg.APIKey).GetWeather("Moscow")
 	if err != nil {
 		log.Fatal(err)
 	}
