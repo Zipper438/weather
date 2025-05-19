@@ -9,8 +9,12 @@ import (
 	"time"
 )
 
+type HTTPClient interface {
+	Get(url string) (*http.Response, error)
+}
+
 type WeatherClient struct {
-	Client  *http.Client
+	Client  HTTPClient
 	BaseURL string
 	APIKey  string
 }
